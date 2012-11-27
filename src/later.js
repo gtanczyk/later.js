@@ -14,6 +14,6 @@ Function.prototype.later = function(timeout, scope) {
 		scope = scope || this;
 		setTimeout(function() {
 			method.apply(scope, args);
-		}), timeout || 0)
+		}, timeout || 0)
 	}
 }
