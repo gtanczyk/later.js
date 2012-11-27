@@ -7,12 +7,16 @@ One function lightweight library useful in some situations, an alternative for "
 
 	console.log.later(1000, console)('Hello world.')
 
+It just works, need to pass scope for console.log invocation.
+
 #### Example 1
 
-	node.style.width = '100px';
+	node.className += 'do-some-css-transition';
 	function() {
-		node.className += 'do-some-css-transition';
-	}.later(0)();		
+		node.style.width = '100px';
+	}.later()();		
+
+Defering invocations is required while working with CSS transitions.
 
 #### Example 3
 
@@ -20,3 +24,5 @@ One function lightweight library useful in some situations, an alternative for "
 			 this.style.height = "";
 			 this.style.height = Math.min(this.scrollHeight, 256) + "px"; 
 		}.later(0));
+		
+Code from www.gamedev.pl interface. Function call must be deferred, because scrollHeight value is not recalculated by browser during initial event invocation.
