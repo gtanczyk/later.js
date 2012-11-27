@@ -9,10 +9,8 @@ Example 1
 	node.style.width = '100px';
 	function() {
 		node.className += 'do-some-css-transition';
-	}.later(0)();
+	}.later(0)();		
 
-U
-	
 Example 2
 ---------
 
